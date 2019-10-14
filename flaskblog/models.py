@@ -10,6 +10,7 @@ from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 # Set login manager decorator
 @login_manager.user_loader
 def load_user(user_id):
+
     # Get user id from database query
     return User.query.get(int(user_id))
 

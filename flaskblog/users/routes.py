@@ -20,7 +20,7 @@ def register():
     if form.validate_on_submit():
         # Hash users password
         hashed_pw = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
-
+        
         # Create new instance of user with User class declared in models
         user = User(username=form.username.data, email=form.email.data, password=hashed_pw)
 
